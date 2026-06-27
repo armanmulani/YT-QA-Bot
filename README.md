@@ -1,34 +1,52 @@
-# WTF Ep.16 — Elon Musk × Nikhil Kamath Podcast Q&A Bot 🎙️
+# ELITE QA BOT — Premium Video Intelligence Dashboard 🛡️✨
 
-A production-ready, ultra-fast Applied AI Q&A bot built for **WTF Podcast Ep. 16**. It lets users search the 2-hour discussion and instantly jump to the exact clickable timestamp on YouTube to verify the answers.
+A production-grade, highly responsive **SaaS Semantic Ingestion Platform** built to analyze, audit, and query **any YouTube video** on **any device** (Mobile, Tablet, Laptop, and Desktop). 
 
-Built with a **zero-framework, first-principles** architecture using **Streamlit**, raw **Python**, and the **Google Gemini API**.
-
----
-
+Pasting any public YouTube link parses its structure, crawls its transcript dynamically, indexes it in-memory, and allows users to perform context-audited searches. The system generates source-cited AI reports and provides **clickable timestamp citation cards that redirect users to the exact second of the discussion on YouTube.**
 
 ---
 
-## 🛠️ The Architecture (Zero-Framework Applied AI)
+## 🚀 Deployed Link & Product Demo
 
-Most junior developers copy-paste LangChain code without understanding what is happening under the hood. For this enterprise proof-of-concept, I chose a **first-principles architecture**:
 
-1. **Local Transcript Cache:** The transcript is stored locally in `transcript.json`. This completely bypasses YouTube's scraper blocks at runtime, saving network roundtrips and ensuring 100% uptime in production.
-2. **Deterministic Chunking:** The 2-hour video is chunked into logical topics of fixed-duration time frames (default: 45 seconds).
-3. **Custom Pure-Python TF-IDF Engine:** Instead of pulling in massive vector database infrastructure (Chroma, Pinecone, or pgvector) for a single document, I implemented a custom **TF-IDF (Term Frequency-Inverse Document Frequency)** ranking algorithm in pure Python using just the `math` library.
-4. **Constrained Generation (Guardrails):** The top 3 most relevant context chunks are fed into **Gemini-1.5-Flash** inside a strict prompt structure. The system prompt commands Gemini to answer ONLY using the provided text blocks and cite precise source timestamps (e.g., `[At 1403s]`).
+---
+
+## 🎨 Design System: Premium Obsidian & Liquid Gold
+This system's visual identity has been completely customized to match the **ELITE QA BOT Golden Shield Logo**:
+* **Obsidian Slate Backgrounds:** Matte dark canvas reducing visual strain and presenting a professional corporate software aesthetic.
+* **Liquid Gold Accents:** Controls, indicators, and left-borders use a premium metallic gold accent (`#D4AF37`) mapping to our brand identity.
+* **Cross-Device Grid:** On desktop screens, the interface renders in a 2-column layout (Left-pane video monitor, Right-pane query monitor). Small screens automatically reflow into a linear vertical scroll with touch-friendly cards.
+
+---
+
+## 🔒 Enterprise-Grade Key Security
+Exposing private API keys in client-side code or web interfaces is a major compliance violation. ELITE QA BOT integrates a **Zero-Frontend Credentials Architecture**:
+* **Backend Ingestion:** The script securely reads credentials in-memory using **`os.environ.get("GEMINI_API_KEY")`** (perfect for local environment variables) or **`st.secrets["GEMINI_API_KEY"]`** (for Streamlit Cloud or Heroku config variables).
+* **Safe Repository:** You can push this entire codebase to a public GitHub repository without the risk of exposing your private Google Gemini keys to crawlers.
+
+---
+
+## 🛠️ First-Principles Architecture (Zero-Framework)
+
+Most beginner developers rely on heavy, opaque wrappers like LangChain or complex, expensive vector databases. ELITE QA BOT is built on a custom, lightweight, **zero-framework approach**:
+
+1. **Regex URL Extraction:** A robust Python regular expression parses desktop, mobile, shorts, or embedded YouTube URLs dynamically to isolate the 11-character `video_id`.
+2. **Dynamic Scraper:** Crawls transcripts live from YouTube servers using `youtube_transcript_api`.
+3. **Resilient Error Boundaries:** Gracefully traps captions disabled, video private, or cloud rate-limiting exceptions rather than letting the application crash.
+4. **Custom Pure-Python TF-IDF Search Engine:** Instead of introducing a database overhead (Chroma, Pinecone), we built a custom **TF-IDF (Term Frequency-Inverse Document Frequency) algorithm in 40 lines of pure Python using the `math` library.** It implements stopwatch-filtering to find semantically relevant segments instantly.
+5. **Audited Generation:** Feeds contexts directly into the official **`gemini-1.5-flash`** or **`gemini-1.5-pro`** models, strictly constraining responses to transcript facts and forcing source timestamp citations (e.g., `[At 01:24:12]`).
 
 ---
 
 ## 📈 ADAPT Framework Implementation (Densight Labs Alignment)
 
-This project was engineered following the **Densight Labs ADAPT Framework**:
+This platform was architected following the **Densight Labs Applied AI Methodology**:
 
-* **A - Assess:** Assessed the business requirement—clients need to quickly audit or find moments in long-form media. Traditional keyword search fails to answer complex questions, while standard RAG frameworks introduce unnecessary database costs and YouTube scraper latency.
-* **D - Diagnose:** Diagnosed the high failure rate of AI scrapers on cloud servers (IP bans) and the business risk of LLM hallucinations on corporate documents.
-* **A - Align:** Aligned the technical solution with client constraints—using Google Gemini 1.5-Flash for fast, cost-efficient, high-context-window generation, and a local pre-cached `transcript.json` to guarantee 100% reliability.
-* **P - Pilot:** Built and deployed this lightweight Streamlit prototype within a day to demonstrate the speed-to-value of semantic discussion auditing.
-* **T - Track:** Designed the UI to track verification by outputting **clickable YouTube timestamp links** (e.g., adding `&t=1403s` to the URL). If the AI makes a claim, the user can verify it in one click.
+* **A - Assess:** Assessed client requirements—non-technical users need to quickly audit and find specific statements inside hours of video content across multiple device widths.
+* **D - Diagnose:** Diagnosed critical production risks—rate-limits on public cloud IPs, disabled subtitles, and LLM hallucinations. Integrated robust try-except error boundaries and built-in stop-word filters.
+* **A - Align:** Aligned technology with budget and latency constraints—using Google's official production-grade **Gemini 1.5 models** for high token capacity and Streamlit for instant, responsive browser-level UI deployment.
+* **P - Pilot:** Created and launched this lightweight, high-performance prototype within a day to demonstrate instant operational value.
+* **T - Track:** Tracked user verification habits by outputting custom, styled timestamp redirect cards. Users can instantly verify the AI's claims with a single click.
 
 ---
 
@@ -36,24 +54,25 @@ This project was engineered following the **Densight Labs ADAPT Framework**:
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPOSITORY_NAME.git
-cd YOUR_REPOSITORY_NAME
+git clone https://github.com/YOUR_GITHUB_USERNAME/wtf-podcast-qa-bot.git
+cd wtf-podcast-qa-bot
 ```
 
-### 2. Install dependencies
-```bash
-pip install streamlit google-generativeai pypdf
-```
+### 2. Set your Secure API Key
+* **Windows (PowerShell):** `$env:GEMINI_API_KEY="your_actual_key"`
+* **Windows (Cmd):** `set GEMINI_API_KEY=your_actual_key`
+* **Mac/Linux:** `export GEMINI_API_KEY="your_actual_key"`
 
 ### 3. Run the application
 ```bash
+pip install -r requirements.txt
 streamlit run app.py
 ```
 
 ---
 
 ## 📂 File Structure
-* `app.py`: The core Streamlit application containing the UI, TF-IDF search engine, and prompt engineering.
-* `transcript.json`: Pre-fetched transcript snippets with precise start times in seconds.
+* `app.py`: Core dashboard interface, TF-IDF engine, responsive UI, and prompt configurations.
+* `logo.png`: Golden shield vector brand identity.
 * `README.md`: System documentation and ADAPT framework alignment.
-* `requirements.txt`: List of dependencies for Streamlit Cloud deployment.
+* `requirements.txt`: Project dependencies.
