@@ -1,4 +1,4 @@
-# ELITE QA BOT — Premium Video Intelligence Dashboard 🛡️✨
+# AIScribe QA BOT — Premium Video Intelligence Dashboard 🛡️✨
 
 A production-grade, highly responsive **SaaS Semantic Ingestion Platform** built to analyze, audit, and query **any YouTube video** on **any device** (Mobile, Tablet, Laptop, and Desktop). 
 
