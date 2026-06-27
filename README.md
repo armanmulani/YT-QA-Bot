@@ -6,9 +6,6 @@ Built with a **zero-framework, first-principles** architecture using **Streamlit
 
 ---
 
-## 🚀 Deployed Link
-👉 **Live Prototype:** [Streamlit Cloud Deployment Link (Insert Your Streamlit URL Here)]  
-👉 **Video Walkthrough:** [Loom Video Link (Insert Your Loom URL Here)]
 
 ---
 
